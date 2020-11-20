@@ -1,2 +1,2 @@
 # my-Age
- a javascript for calculating age
+This is a small javascript web app for calculating user's age.
