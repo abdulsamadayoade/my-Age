@@ -58,6 +58,7 @@ input {
 
 #submit-btn {
     background-color: #343a40;
+    outline: none;
     border: none;
     color: #fff;
     cursor: pointer;
