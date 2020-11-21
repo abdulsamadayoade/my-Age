@@ -3,14 +3,33 @@ const date = new Date().getFullYear();
 const dateField = document.getElementById('date-field');
 const ageField = document.getElementById('age-field');
 
-form.addEventListener('submit', calculateAge);
+form.addEventListener('submit', function (e) {
+    // SHOW LOADER
+    document.querySelector('.loader').style.display = 'block';
+
+    // HIDE THE AGE RESULT
+    document.querySelector('.age-container').style.display = 'none';
+
+    // TIME OUT
+    setTimeout(calculateAge, 2000);
+
+    e.preventDefault();
+});
 
 function calculateAge(e) {
     if (dateField.value !== '') {
         const userDate = dateField.value;
         ageField.value = date - userDate;
+
+        // HIDE THE LOADER
+        document.querySelector('.loader').style.display = 'none';
+
+        // SHOW AGE THE RESULT
+        document.querySelector('.age-container').style.display = 'block';
     } else {
         errorMsg('Please input your year of birth');
+        // HIDE THE LOADER
+        document.querySelector('.loader').style.display = 'none';
     }
 
     e.preventDefault();
