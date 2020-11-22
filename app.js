@@ -16,7 +16,7 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
 });
 
-function calculateAge(e) {
+function calculateAge() {
     if (dateField.value !== '') {
         const userDate = dateField.value;
         ageField.value = date - userDate;
@@ -31,8 +31,6 @@ function calculateAge(e) {
         // HIDE THE LOADER
         document.querySelector('.loader').style.display = 'none';
     }
-
-    e.preventDefault();
 }
 
 function errorMsg(error) {
